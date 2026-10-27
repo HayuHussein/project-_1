@@ -4,9 +4,8 @@ using namespace std;
 
 int main() {
     char names[3][20];
-    char marks[3][5];
+    int marks[3][5];
     top=0;
-    int total;
     double average;
     cout << "Enter the names and their respective Marks:" << endl;
     for (int i=0; i<3; i++)
@@ -23,7 +22,7 @@ int main() {
     //------------calculation Phase---------
     for (int i=0; i<3; i++)
     {
-        for (int j=0; j<3; j++)
+        for (int j=0; j<1; j++)
         {
             marks[i][j+3] = marks[i][j] + marks[i][j+1] + marks[i][j+2];
             marks[i][j+4] = (marks[i][j+3])/3;
@@ -31,7 +30,7 @@ int main() {
     }
 
     //----------------Display Phase-------------------
-    cout << left << setw(10) << Name << left << setw(10) << M1 << left << setw(10) << M2 << left << setw(10) << M3 << left << setw(10) << Total << left << setw(10) << Average <<endl;
+    cout << left << setw(10) << "Name" << left << setw(10) << "M1" << left << setw(10) << "M2" << left << setw(10) << "M3" << left << setw(10) << "Total" << left << setw(10) << "Average" <<endl;
     for (int i=0; i<3; i++)
     {
         cout << left << setw(10) << names[i];

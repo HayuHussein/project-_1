@@ -3,56 +3,76 @@
 using namespace std;
 
 int main() {
-    char names[3][20];
-    int marks[3][5];
+    char names[5][20];
+    int marks[5][3];
     int top=0;
-    double average[3];
+    int total[5];
+    double average[5];
 
     //--------------input phase----------
     cout << "Enter the names and their respective Marks:" << endl;
-    for (int i=0; i<3; i++)
+    for (int i=0; i<5; i++)
     {
         cout << "Enter Name" << (i+1) <<":";
-        cin >> names[i];
+        // cin >> names[i];
+        cin.getline(names[i], 20);
         for (int j=0; j<3; j++)
         {
             cout << "Enter M" << (j+1) <<":";
             cin >> marks[i][j];
         }
+        cin.ignore();
         cout << endl;
     }
 
     //------------calculation Phase---------
-    for (int i=0; i<3; i++)
+
+    for (int i=0; i<5; i++)
     {
-        marks[i][3] = marks[i][0] + marks[i][1] + marks[i][2];
-        average[i]= (marks[i][3])/3.0;
+        total[i] = marks[i][0] + marks[i][1] + marks[i][2];
+        average[i] = total[i] / 3.0;
+
     }
 
     //----------------Display Phase-------------------
-    cout << left << setw(10) << "Name" << left << setw(10) << "M1" << left << setw(10) << "M2" << left << setw(10) << "M3" << left << setw(10) << "Total" << left << setw(10) << "Average" <<endl;
-    for (int i=0; i<3; i++)
+    cout << left << setw(15) << "Name" << left << setw(7) << "M1" << left << setw(7) << "M2" << left << setw(7) << "M3" << left << setw(7) << "Total" << left << setw(7) << "Average" <<endl;
+
+    for (int i=0; i<5; i++)
     {
-        cout << left << setw(10) << names[i];
-        for (int j=0; j<4; j++)
+        cout << left << setw(15) << names[i];
+        for (int j=0; j<3; j++)
         {
-            cout << left << setw(10) << marks [i][j];
+            cout << left << setw(7) << marks [i][j];
         }
-        cout << left << setw(10) << average[i];
+        cout << left << setw(7) << total[i];
+        cout << left << setw(7) << average[i];
         cout << endl;
     }
     // ----------dispalying the Top student---------
-    for (int i=0; i<3; i++)
+    for (int i=0; i<5; i++)
     {
-        if (marks[i][3] > marks[top][3])
+        if (total[i] > total[top])
         {
             top = i;
         }
     }
 
+    cout << "\nTop student(s):" << endl;
+    for (int i=0; i<5; i++)
+    {
+        if (total[i] == total[top])
+        {
+          cout << names[i];
+          cout << " | Total Mark: " << total[i] << endl;  
+        }
+    }
 
-    cout << "\nTop student is:" << names[top];
 
     return 0;
 
 }
+// Abebe Kebede
+// Abdi Abebe
+// Hana zeleke
+// Jibril Kamal
+// Fuad Aman

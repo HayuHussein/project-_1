@@ -71,8 +71,3 @@ int main() {
     return 0;
 
 }
-// Abebe Kebede
-// Abdi Abebe
-// Hana zeleke
-// Jibril Kamal
-// Fuad Aman
